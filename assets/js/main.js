@@ -13,9 +13,11 @@ function salvar_aluno() {
     } else {
         document.getElementById("saida").innerHTML = "Dados salvos com Sucesso!";
         lista_de_alunos.push(aluno);
-        /* document.getElementById("lista").innerHTML =
-             "<li>" + aluno.nome + " - " + aluno.telefone + " - " + aluno.cidade + "</li>"; */
     }
+
+    document.getElementById("nome").value = "";
+    document.getElementById("telefone").value = "";
+    document.getElementById("cidade").value = "";
 
     mostrar_alunos();
 }
