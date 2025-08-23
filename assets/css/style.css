@@ -23,6 +23,29 @@ h1 {
     color: #F9F3EF;
 }
 
+input {
+    width: 20%;
+    padding: 10px 20px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    transition: width 0.4s ease-in-out;
+}
+
+input:focus {
+    border: 3px solid #1B3C53;
+}
+
+section button {
+    background-color: #1B3C53;
+    color: #F9F3EF;
+    border: none;
+    border-radius: 5px;
+    font-size: medium;
+    padding: 16px 22px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 main {
     padding: 25px;
     min-height: 70vh;
