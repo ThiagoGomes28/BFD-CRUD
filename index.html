@@ -17,21 +17,23 @@
 
         <section id="entradas">
             <h2>Novo Aluno:</h2><br>
-            <input type="text" placeholder="Nome aqui"><br>
-            <input type="number" placeholder="Telefone aqui"><br>
-            <input type="text" placeholder="Cidade aqui"><br>
+            <input type="text" id="nome" placeholder="Nome aqui"><br>
+            <input type="number" id="telefone" placeholder="Telefone aqui"><br>
+            <input type="text" id="cidade" placeholder="Cidade aqui"><br>
         </section>
 
         <section id="botoes">
-            <br><button>Criar</button>
-            <button>Ler</button>
-            <button>Atualizar</button>
-            <button>Deletar</button>
+            <br><button onclick="salvar_aluno()">Criar</button>
+            <button onclick="mostrar_aluno()">Ler</button>
+            <button onclick="editar_aluno()">Atualizar</button>
+            <button onclick="excluir_aluno()">Deletar</button>
         </section>
 
         <section id="lista_alunos">
             <br><h2>Lista de Alunos</h2><br>
-            <ul>
+            <p id="saida"></p><br>
+            <p id="cabecalho">Nome | Telefone | Cidade</p><br>
+            <ul id="lista">
 
             </ul>
         </section>

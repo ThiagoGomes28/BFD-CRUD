@@ -9,7 +9,8 @@
 }
 
 body {
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 header {
@@ -21,6 +22,11 @@ header {
 
 h1 {
     color: #F9F3EF;
+}
+
+main {
+    padding: 25px;
+    min-height: 70vh;
 }
 
 input {
@@ -46,9 +52,14 @@ section button {
     cursor: pointer;
 }
 
-main {
-    padding: 25px;
-    min-height: 70vh;
+section #cabecalho {
+    background-color: #1B3C53;
+    color: #F9F3EF;
+    text-align: center;
+    width: 50%;
+    font-size: medium;
+    padding: 16px 22px;
+    margin: 4px 22px;
 }
 
 footer {
