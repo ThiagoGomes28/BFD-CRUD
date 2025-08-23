@@ -1,28 +1,43 @@
 
-let aluno = {
-    nome: "",
-    telefone: 0,
-    cidade: ""
-};
+let lista_de_alunos = [];
 
-function salvar_aluno(){
-    aluno.nome = document.getElementById("nome").value;
-    aluno.telefone = document.getElementById("telefone").value;
-    aluno.cidade = document.getElementById("cidade").value;
+function salvar_aluno() {
+    let aluno = {
+        nome: document.getElementById("nome").value,
+        telefone: document.getElementById("telefone").value,
+        cidade: document.getElementById("cidade").value
+    };
 
-    if (aluno.nome == "" || aluno.telefone == 0 || aluno.cidade == ""){
+    if (aluno.nome == "" || aluno.telefone == "" || aluno.cidade == "") {
         document.getElementById("saida").innerHTML = "Dados inválidos!"
     } else {
         document.getElementById("saida").innerHTML = "Dados salvos com Sucesso!";
+        lista_de_alunos.push(aluno);
+        /* document.getElementById("lista").innerHTML =
+             "<li>" + aluno.nome + " - " + aluno.telefone + " - " + aluno.cidade + "</li>"; */
     }
-    
+
+    mostrar_alunos();
 }
 
-function mostrar_aluno(){
-    if (aluno.nome == "" || aluno.telefone == 0 || aluno.cidade == ""){
-        document.getElementById("saida").innerHTML = "Nenhum aluno Cadastrado!"
-    } else {
-        document.getElementById("lista").innerHTML = 
-        "<li>" + aluno.nome + " - " + aluno.telefone + " - " + aluno.cidade + "</li>";
-    }
+function mostrar_alunos() {
+    let ul = document.getElementById("lista");
+    let html = "";
+    lista_de_alunos.forEach(elemento => {
+        html += `<li>${elemento.nome} - ${elemento.telefone} - ${elemento.cidade}</li>`;
+    });
+
+    ul.innerHTML = html;
+}
+
+function recuperar_aluno() {
+
+}
+
+function editar_aluno() {
+
+}
+
+function excluir_aluno() {
+
 }
