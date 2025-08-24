@@ -4,8 +4,14 @@ let selecionado = null;
 
 let ul = document.getElementById("lista");
 
+let aluno = {
+    nome: "",
+    telefone: "",
+    cidade: ""
+};
+
 function salvar_aluno() {
-    let aluno = {
+    aluno = {
         nome: document.getElementById("nome").value,
         telefone: document.getElementById("telefone").value,
         cidade: document.getElementById("cidade").value
@@ -39,12 +45,12 @@ function mostrar_alunos() {
 ul.addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
         selecionado = event.target.dataset.index;
-        document.getElementById("saida").innerHTML = `Foi selecionado: ${lista_de_alunos[selecionado].nome} - ${lista_de_alunos[selecionado].telefone} - ${lista_de_alunos[selecionado].cidade}`;
+        document.getElementById("saida").innerHTML = `<b>Foi selecionado:</b> ${lista_de_alunos[selecionado].nome} - ${lista_de_alunos[selecionado].telefone} - ${lista_de_alunos[selecionado].cidade}`;
     }
 });
 
 function recuperar_aluno() {
-    if (selecionado === null){
+    if (selecionado === null) {
         document.getElementById("saida").innerHTML = "Nenhum aluno Selecionado!";
         return;
     }
@@ -57,6 +63,27 @@ function recuperar_aluno() {
 
 function editar_aluno() {
 
+    nome = document.getElementById("nome").value;
+    telefone = document.getElementById("telefone").value;
+    cidade = document.getElementById("cidade").value;
+
+    if (nome == "" || telefone == "" || cidade == "") {
+        document.getElementById("saida").innerHTML = "Faltou algum Campo!"
+    } else {
+        document.getElementById("saida").innerHTML = "Dados Editado com Sucesso!";
+    }
+
+    lista_de_alunos[selecionado].nome = nome;
+    lista_de_alunos[selecionado].telefone = telefone;
+    lista_de_alunos[selecionado].cidade = cidade;
+
+    document.getElementById("nome").value = "";
+    document.getElementById("telefone").value = "";
+    document.getElementById("cidade").value = "";
+
+    selecionado = null;
+
+    mostrar_alunos();
 }
 
 function excluir_aluno() {
