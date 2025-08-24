@@ -62,6 +62,15 @@ section #cabecalho {
     margin: 4px 22px;
 }
 
+#lista li {
+    cursor: pointer;
+}
+
+#lista li:hover {
+    color: #1B3C53;
+    font-weight: bold;
+}
+
 footer {
     padding: 15px;
     min-height: 5vh;
