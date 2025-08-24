@@ -1,5 +1,6 @@
 
 let lista_de_alunos = [];
+let selecionado = null;
 
 function salvar_aluno() {
     let aluno = {
@@ -25,15 +26,15 @@ function salvar_aluno() {
 function mostrar_alunos() {
     let ul = document.getElementById("lista");
     let html = "";
-    lista_de_alunos.forEach(elemento => {
-        html += `<li>${elemento.nome} - ${elemento.telefone} - ${elemento.cidade}</li>`;
+    lista_de_alunos.forEach((elemento, i) => {
+        html += `<li data-index="${i}">${elemento.nome} - ${elemento.telefone} - ${elemento.cidade}</li>`;
     });
 
     ul.innerHTML = html;
 }
 
 function recuperar_aluno() {
-
+    
 }
 
 function editar_aluno() {
