@@ -2,6 +2,8 @@
 let lista_de_alunos = [];
 let selecionado = null;
 
+let ul = document.getElementById("lista");
+
 function salvar_aluno() {
     let aluno = {
         nome: document.getElementById("nome").value,
@@ -24,17 +26,25 @@ function salvar_aluno() {
 }
 
 function mostrar_alunos() {
-    let ul = document.getElementById("lista");
+
     let html = "";
     lista_de_alunos.forEach((elemento, i) => {
         html += `<li data-index="${i}">${elemento.nome} - ${elemento.telefone} - ${elemento.cidade}</li>`;
     });
 
     ul.innerHTML = html;
-}
+};
+
+
+ul.addEventListener("click", (event) => {
+    if (event.target.tagName === "LI") {
+        selecionado = event.target.dataset.index;
+        document.getElementById("saida").innerHTML = `Foi selecionado: ${lista_de_alunos[selecionado].nome} - ${lista_de_alunos[selecionado].telefone} - ${lista_de_alunos[selecionado].cidade}`;
+    }
+});
 
 function recuperar_aluno() {
-    
+
 }
 
 function editar_aluno() {
