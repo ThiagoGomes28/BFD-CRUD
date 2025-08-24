@@ -88,4 +88,20 @@ function editar_aluno() {
 
 function excluir_aluno() {
 
-}
+    if (selecionado === null) {
+        document.getElementById("saida").innerHTML = "Nenhum Aluno Selecionado!"
+        return;
+    }
+
+    lista_de_alunos.splice(selecionado, 1);
+    
+    document.getElementById("nome").value = "";
+    document.getElementById("telefone").value = "";
+    document.getElementById("cidade").value = "";
+
+    selecionado = null;
+
+    mostrar_alunos();
+
+    document.getElementById("saida").innerHTML = "Dados Excluídos com Sucesso!";
+};
