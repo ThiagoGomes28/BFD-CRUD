@@ -44,8 +44,16 @@ ul.addEventListener("click", (event) => {
 });
 
 function recuperar_aluno() {
+    if (selecionado === null){
+        document.getElementById("saida").innerHTML = "Nenhum aluno Selecionado!";
+        return;
+    }
 
-}
+    let aluno_posicao = lista_de_alunos[selecionado];
+    document.getElementById("nome").value = aluno_posicao.nome;
+    document.getElementById("telefone").value = aluno_posicao.telefone;
+    document.getElementById("cidade").value = aluno_posicao.cidade;
+};
 
 function editar_aluno() {
 
