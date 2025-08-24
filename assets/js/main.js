@@ -69,6 +69,7 @@ function editar_aluno() {
 
     if (nome == "" || telefone == "" || cidade == "") {
         document.getElementById("saida").innerHTML = "Faltou algum Campo!"
+         return;
     } else {
         document.getElementById("saida").innerHTML = "Dados Editado com Sucesso!";
     }
@@ -84,7 +85,7 @@ function editar_aluno() {
     selecionado = null;
 
     mostrar_alunos();
-}
+};
 
 function excluir_aluno() {
 
